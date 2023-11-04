@@ -1,0 +1,51 @@
+.bookmark-icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 2H5c-1.1 0-2 .9-2 2v16l8-4.57L19 20V4c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E");
+}
+
+.bookmark-icon-hollow {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 2H5c-1.1 0-2 .9-2 2v16l8-4.57L19 20V4c0-1.1-.9-2-2-2z' fill='none' stroke='darkgrey' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+// .star-icon {
+//   background: center / 1.5em no-repeat
+//     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.38L22 9.27l-5 4.86 1.18 6.88L12 17.77l-6.18 3.24L7 14.13l-5-4.86 6.91-.89L12 2z' stroke-linecap='round' stroke-linejoin='round' fill='gold' stroke='gold' stroke-width='3' /%3E%3C/svg%3E");
+// }
+
+.star-icon {
+  --fill: 50%;
+  position: relative;
+  //   width: 12px;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    mask: center / 1.5em no-repeat
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.38L22 9.27l-5 4.86 1.18 6.88L12 17.77l-6.18 3.24L7 14.13l-5-4.86 6.91-.89L12 2z' stroke-linecap='round' stroke-linejoin='round' fill='gold' stroke='gold' stroke-width='3' /%3E%3C/svg%3E");
+    background: center / 1.5em 1.5em no-repeat
+      linear-gradient(to right, gold var(--fill), lightgrey var(--fill));
+  }
+}
+
+button.primary {
+  background: var(--accent-1);
+  color: var(--accent-2);
+  border: 1px solid var(--accent-1);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: var(--accent-2);
+    color: var(--accent-1);
+  }
+}
